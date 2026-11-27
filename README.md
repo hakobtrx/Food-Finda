@@ -1,47 +1,67 @@
-# FoodFinda
+# Food-Finda
 
-FoodFinda is a Java application for simulating an online food delivery workflow. The project is being developed with a user interface; the current console flow is a temporary prototype for exercising order handling, rider assignment, route planning, and delivery tracking while the UI is integrated.
+Food-Finda is a Java console simulator for a small food delivery operation. Place orders from a sample restaurant list, assign available riders, and advance deliveries through pickup and completion. The project demonstrates object-oriented modeling and basic data structures and algorithms.
 
 ## Requirements
 
-- Java 17 or newer
-- Maven (optional when using the PowerShell launcher)
+- Java Development Kit (JDK) 17 or newer
+- PowerShell to use the included launcher
+- Maven 3.6 or newer if using Maven commands
 
-## Run
+Check that Java is available with:
 
-From the project root in PowerShell:
+```powershell
+java -version
+javac -version
+```
+
+## Run the simulator
+
+From the repository root in PowerShell:
 
 ```powershell
 .\run.ps1
 ```
 
-With Maven:
+The launcher compiles the Java files into `target/classes` with `javac` and starts `com.foodfinda.Main`. To compile and run with Maven instead:
 
 ```powershell
 mvn compile exec:java
 ```
 
-## Documentation
+## Using the app
 
-Project documentation is organized under [`docs/`](docs/): overview and scope, environment setup, system design, UI notes, DSA implementation, module descriptions, testing guidance, collaboration log, and final evaluation.
+The interactive menu lets you:
+
+1. Place an order by entering a customer name, choosing a restaurant, entering an item and delivery grid coordinates, and marking whether it is urgent.
+2. View orders, with urgent orders displayed first.
+3. Advance a selected order through its statuses until it is delivered.
+4. View riders and their availability and current locations.
+0. Exit.
+
+The sample data includes three restaurants and three riders. Each available rider is assigned to the order whose restaurant is nearest by Manhattan distance. The route travels horizontally and then vertically on an unobstructed grid. An assigned rider becomes available again after delivery.
 
 ## Project structure
 
 ```text
 Food-Finda/
-├── docs/
-│   ├── 01_Project_Overview/
-│   ├── 02_Environment_Setup/
-│   ├── 03_System_Design/
-│   ├── 04_UI_Development/
-│   ├── 05_DSA_Implementation/
-│   ├── 06_Module_Development/
-│   ├── 07_Testing/
-│   ├── 08_Collaboration/
-│   └── 09_Final_Evaluation/
 ├── pom.xml
 ├── run.ps1
-└── src/
+├── README.md
+└── src/main/java/com/foodfinda/
+    ├── Main.java
+    ├── app/FoodFindaApp.java
+    ├── algorithms/
+    │   ├── OrderPriority.java
+    │   └── RoutePlanner.java
+    ├── data/DemoData.java
+    ├── models/
+    └── services/DeliveryService.java
 ```
 
-Orders and riders are held in memory and reset when the app exits. Routes use a simple grid and do not model real roads, maps, or traffic. Payments and live delivery tracking are out of scope.
+## Notes
+
+- Orders and rider state exist only in memory and reset when the app exits.
+- The grid is a simple simulation; routes do not account for streets or obstacles.
+- The app does not process payments or connect to a real delivery service.
+- The Maven project currently uses only the Java standard library. A Swing interface is described in project documentation but is not part of the current runnable prototype.
