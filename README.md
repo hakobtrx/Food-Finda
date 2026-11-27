@@ -1,6 +1,6 @@
 # FoodFinda
 
-FoodFinda is a Java console simulator for an online food delivery workflow. It accepts orders, prioritizes urgent orders, assigns the nearest available rider, displays a simple grid route, and tracks pickup and delivery.
+FoodFinda is a Java application for simulating an online food delivery workflow. The project is being developed with a user interface; the current console flow is a temporary prototype for exercising order handling, rider assignment, route planning, and delivery tracking while the UI is integrated.
 
 ## Requirements
 

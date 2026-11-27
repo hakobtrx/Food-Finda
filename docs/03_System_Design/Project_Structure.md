@@ -9,8 +9,8 @@ Food-Finda/
 └── src/
     ├── main/java/com/foodfinda/
     │   ├── Main.java
-    │   ├── app/                  # Console workflow
-    │   ├── ui/                   # Reserved for UI code
+    │   ├── app/                  # Application workflow and current console prototype
+    │   ├── ui/                   # UI integration
     │   ├── models/               # Domain objects
     │   ├── services/             # Delivery workflow
     │   ├── algorithms/           # Route and priority logic

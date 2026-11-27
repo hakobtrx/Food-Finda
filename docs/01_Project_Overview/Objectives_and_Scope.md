@@ -11,7 +11,8 @@
 
 ## Included
 
-- Console user interface.
+- User interface for placing orders and viewing riders, routes, and delivery status (in development).
+- Temporary console prototype for exercising the workflow during UI integration.
 - In-memory sample restaurants and riders.
 - Manhattan-distance rider selection and grid route generation.
 - Manual status advancement to simulate delivery.
